@@ -1,5 +1,5 @@
 package dominio;
-
+// Cambio para commit y posterior pull request
 import java.util.Vector;
 import java.util.Date;
 
@@ -18,18 +18,18 @@ public class Credito extends Tarjeta
 	public void retirar(double x) throws Exception 
 	{
 		Movimiento m=new Movimiento();
-		m.setConcepto("Retirada en cajero autom·tico");
-		x=(x*0.05<3.0 ? 3 : x*0.05);  // AÒadimos una comisiÛn de un 5%, mÌnimo de 3 euros.
+		m.setConcepto("Retirada en cajero autom√°tico");
+		x=(x*0.05<3.0 ? 3 : x*0.05);  // A√±adimos una comisi√≥n de un 5%, m√≠nimo de 3 euros.
 		m.setImporte(x);
 		mMovimientos.addElement(m);
 		if (x>getCreditoDisponible())
-			throw new Exception("CrÈdito insuficiente");
+			throw new Exception("Cr√©dito insuficiente");
 	}
 	
 	public void ingresar(double x) throws Exception 
 	{
 		Movimiento m=new Movimiento();
-		m.setConcepto("Ingreso en cuenta asociada (cajero autom·tico)");
+		m.setConcepto("Ingreso en cuenta asociada (cajero autom√°tico)");
 		m.setImporte(x);
 		mMovimientos.addElement(m);
 		mCuentaAsociada.ingresar(x);
@@ -38,7 +38,7 @@ public class Credito extends Tarjeta
 	public void pagoEnEstablecimiento(String datos, double x) throws Exception 
 	{
 		Movimiento m=new Movimiento();
-		m.setConcepto("Compra a crÈdito en: " + datos);
+		m.setConcepto("Compra a cr√©dito en: " + datos);
 		m.setImporte(x);
 		mMovimientos.addElement(m);
 	}
@@ -59,15 +59,15 @@ public class Credito extends Tarjeta
 		return mCredito-getSaldo();
 	}
 	
-	public void liquidar(int mes, int aÒo) 
+	public void liquidar(int mes, int a√±o) 
 	{
 		Movimiento liq=new Movimiento();
-		liq.setConcepto("LiquidaciÛn de operaciones tarj. crÈdito, " + (mes+1) + " de " + (aÒo+1900));
+		liq.setConcepto("Liquidaci√≥n de operaciones tarj. cr√©dito, " + (mes+1) + " de " + (a√±o+1900));
 		double r=0.0;
 		for (int i=0; i<this.mMovimientos.size(); i++) 
 		{
 			Movimiento m=(Movimiento) mMovimientos.elementAt(i);
-			if (m.getFecha().getMonth()+1==mes && m.getFecha().getYear()+1900==aÒo)
+			if (m.getFecha().getMonth()+1==mes && m.getFecha().getYear()+1900==a√±o)
 				r+=m.getImporte();
 		}
 		liq.setImporte(r);

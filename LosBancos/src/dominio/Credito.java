@@ -2,7 +2,7 @@ package dominio;
 // Cambio para commit y posterior pull request
 import java.util.Vector;
 import java.util.Date;
-
+//COMENTARIO REALIZADO POR ANDER
 public class Credito extends Tarjeta
 {
 	protected double mCredito;

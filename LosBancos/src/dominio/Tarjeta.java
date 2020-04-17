@@ -1,3 +1,4 @@
+//COMENTARIO HECHO POR ARITZ
 package dominio;
 
 import java.util.Date;

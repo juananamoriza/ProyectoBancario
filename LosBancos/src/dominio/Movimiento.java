@@ -1,7 +1,7 @@
 package dominio;
 
 import java.util.Date;
-
+//comentario de angelo
 public class Movimiento 
 {
 	protected String mConcepto;

@@ -1,5 +1,5 @@
 package dominio;
-// Cambio para commit y posterior pull request
+
 import java.util.Vector;
 import java.util.Date;
 
